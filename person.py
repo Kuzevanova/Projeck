@@ -16,6 +16,6 @@ def byId(id):
 @personApi.route('/person/name/<string:name>/age/<string:age>/school_id')
 def put(name, age, school_id):
     person = Person(name=name, age=age, school_id=school_id)
-    db.session.add(Person)
+    db.session.add(person)
     db.session.commit()
     return jsonify(Person.json()) if Person else ''
